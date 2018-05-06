@@ -10,7 +10,7 @@ import os
 
 
 #######################  FUNCTIONS FOR THE FLASHCARD SYSTEM
-def añadir_nuevo_tema():
+def anadir_nuevo_tema():
     nombre_tema_nuevo = input("Whats the name of the new topic?: ")
     temas.append(nombre_tema_nuevo)
     nuevo_tema = pd.DataFrame()
@@ -88,8 +88,8 @@ def nueva_pregunta(tema_para_modificar, tema):
 #######################
 #Menu for choosing the actions. You can play the game, edit flashcards or create a new category
 
-temas = os.listdir(".")
-temas.remove("flashcards.py")
+temas = [f for f in os.listdir(".") if f.endswith('.xlsx')]
+
 
 while True: 
     action = input("Welcome to 'Flash Card, the game'. Please write '1' to play game, '2' to edit flashcards or'3' for create a new category, '4' to exit. The press 'intro': ")
